@@ -5,3 +5,12 @@
     
   <% end %>
 </ul>
+
+<% if current_user  %>
+	You are logged in as <%= current_user.user_name %>
+	<%= link_to 'LOG OUT!', logout_path, method: :delete %>
+	
+<% else %>
+	<%= link_to 'SIGN UP', users_new_path %>
+	<%= link_to 'LOG IN', login_path %>
+<% end %>
