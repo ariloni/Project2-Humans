@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
 	#2 - A method that checks to see if password and 
 	#password_confirmation are the same before the user is actually saved.
 	has_secure_password
+	#Talls rails that the User model will be associated with multpile posts
+	has_many :posts
+	#has_many :followers
 end

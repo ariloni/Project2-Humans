@@ -8,6 +8,7 @@
 
 <% if current_user  %>
 	You are logged in as <%= current_user.user_name %>
+	<%= link_to current_user.user_name + "'s profile", posts_path %>
 	<%= link_to 'LOG OUT!', logout_path, method: :delete %>
 	
 <% else %>
