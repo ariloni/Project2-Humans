@@ -4,6 +4,7 @@
     <div class="navbar-header">
       
       <% if current_user  %>
+        <%= link_to "Home", users_path %>
 
         You are authoring as <%= current_user.user_name %>
         <%= link_to "Story-line", posts_path %>
