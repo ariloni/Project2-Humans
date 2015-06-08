@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
 
   get    "users" =>          "users#index"
-  get    "users/new" =>      "users#new" 
   post   "users" =>          "users#create"
+  get    "users/new" =>      "users#new"
   get    "users/:id/edit" => "users#edit", as: :edit_user
   get    "users/:id" =>      "users#show"#, as: :user
   patch  "users/:id" =>      "users#update"
@@ -17,14 +17,14 @@ Rails.application.routes.draw do
   post   'login'    =>  'sessions#create'
   delete 'logout' =>    'sessions#destroy'
 
-  get    'posts'   =>             'posts#index'
-  post   'posts'     =>           'posts#create'
-  get    'posts/new'  =>          'posts#new'#, as: :new_post
-  get    'posts/:id/edit'=>       'posts#edit', as: :edit_post
-  get    'posts/:id'  =>          'posts#show', as: :post
-  patch  'posts/:id'  =>          'posts#update'
+  get    'posts'   =>       'posts#index'
+  post   'posts'     =>     'posts#create'
+  get    'posts/new'  =>    'posts#new'#, as: :new_post
+  get    'posts/:id/edit'=> 'posts#edit', as: :edit_post
+  get    'posts/:id'  =>    'posts#show', as: :post
+  patch  'posts/:id'  =>    'posts#update'
   #put    'posts/:id'  =>          'posts#update'
-  delete 'posts/:id'  =>          'posts#destroy', as: :delete_post
+  delete 'posts/:id'  =>    'posts#destroy', as: :delete_post
   
   root 'sessions#new'
 

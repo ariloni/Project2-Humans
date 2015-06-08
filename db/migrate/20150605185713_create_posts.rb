@@ -1,7 +1,6 @@
 class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
-      t.string :photo
       t.string :body
       t.string :string
       t.string :landmark

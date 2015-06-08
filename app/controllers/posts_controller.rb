@@ -43,7 +43,7 @@ class PostsController < ApplicationController
 #Privately sets parameters to be used by other methods.
 private
   def post_params
-    params.require(:post).permit(:photo, :body, :landmark, 
+    params.require(:post).permit(:body, :image, :landmark, 
     	:city, :state, :country)
   end
 end
