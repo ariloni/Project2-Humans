@@ -1,4 +1,4 @@
-<%= form_for :user, url: users_path(@user), method: :patch do |u| %>
+<%= form_for :user, url: user_path(@user), method: :patch do |u| %>
  
   <% if @user.errors.any? %>
     <div id="error_explanation">
