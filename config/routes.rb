@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   get    "users" =>          "users#index"
   get    "users/new" =>      "users#new" 
   post   "users" =>          "users#create"
-  get    "users/:id/edit" => "users#edit"
-  get    "users/:id" =>      "users#show" #as: :user
+  get    "users/:id/edit" => "users#edit", as: :edit_user
+  get    "users/:id" =>      "users#show"#, as: :user
   patch  "users/:id" =>      "users#update"
   put    "users/:id" =>      "users#update"
-  delete "users/:id" =>      "users#destroy" #as: :delete_user
+  delete "users/:id" =>      "users#destroy", as: :delete_user
 
 
   get    'login'     => 'sessions#new'
@@ -19,12 +19,12 @@ Rails.application.routes.draw do
 
   get    'posts'   =>             'posts#index'
   post   'posts'     =>           'posts#create'
-  get    'posts/new'  =>          'posts#new' #as: :new_post
-  get    'posts/:id/edit'=>       'posts#edit' #as: :edit_post
-  get    'posts/:id'  =>          'posts#show' #as: :post
+  get    'posts/new'  =>          'posts#new'#, as: :new_post
+  get    'posts/:id/edit'=>       'posts#edit', as: :edit_post
+  get    'posts/:id'  =>          'posts#show', as: :post
   patch  'posts/:id'  =>          'posts#update'
-  put    'posts/:id'  =>          'posts#update'
-  delete 'posts/:id'  =>          'posts#destroy' #as: :delete_post
+  #put    'posts/:id'  =>          'posts#update'
+  delete 'posts/:id'  =>          'posts#destroy', as: :delete_post
   
   root 'sessions#new'
 

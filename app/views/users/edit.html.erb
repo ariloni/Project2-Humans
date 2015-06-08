@@ -1,0 +1,50 @@
+<%= form_for :user, url: users_path(@user), method: :patch do |u| %>
+ 
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this user from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= u.label :first_name %><br>
+    <%= u.text_field :first_name %>
+  </p>
+ 
+  <p>
+    <%= u.label :last_name %><br>
+    <%= u.text_area :last_name %>
+  </p>
+  <p>
+    <%= u.label :user_name %><br>
+    <%= u.text_area :user_name %>
+  </p>
+  <p>
+    <%= u.label :email %><br>
+    <%= u.text_area :email %>
+  </p>
+  <p>
+    <%= u.label :password %><br>
+    <%= u.text_area :password %>
+  </p>
+  <p>
+    <%= u.label :password_confirmation %><br>
+    <%= u.text_area :password_confirmation %>
+  </p>
+ 
+ 
+  <p>
+    <%= u.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', users_path %>
