@@ -3,4 +3,4 @@ rvm:
 
 -2.2.2
 -2.1.5 
-cache: bundler ec
+cache: bundler 
